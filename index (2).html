@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>滑动门页面</title>
+<style>
+  body { margin:0; padding:40px; background:#f0f4f9;
+         font-family:"Microsoft YaHei", sans-serif; color:#333; }
+  h1 { font-size:26px; margin-bottom:24px; }
+
+  /* 每条门片：竖向排列 */
+  .item {
+    width: 320px;            /* 收起时宽度 */
+    height: 90px;
+    background:#fff;
+    border:1px solid #ccd6e2;
+    margin-bottom:10px;
+    display:flex;
+    overflow:hidden;         /* 收起时藏住右边内容 */
+    transition:width 0.5s;   /* 宽度变化做动画 */
+    cursor:pointer;
+  }
+
+  /* 鼠标移上去：横向展开 */
+  .item:hover { width:900px; border-color:#2b5797; }
+
+  /* 左侧一级标题 */
+  .left {
+    flex:0 0 210px; padding:0 15px;
+    display:flex; align-items:center; font-size:18px;
+  }
+
+  /* 右侧二级标题 */
+  .right {
+    flex:1; opacity:0; transition:opacity 0.4s;
+    display:flex; align-items:center; gap:12px; padding-right:20px;
+  }
+  .item:hover .right { opacity:1; }
+
+  .right span {
+    padding:8px 12px; background:#e8eff9;
+    border-left:3px solid #2b5797; font-size:14px; white-space:nowrap;
+  }
+</style>
+</head>
+<body>
+
+  <h1>中国自然风光</h1>
+
+  <div class="item">
+    <div class="left">01 山川名山</div>
+    <div class="right">
+      <span>泰山</span><span>黄山</span><span>峨眉山</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="left">02 江河湖泊</div>
+    <div class="right">
+      <span>长江</span><span>黄河</span><span>西湖</span>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="left">03 秘境地貌</div>
+    <div class="right">
+      <span>张家界</span><span>九寨沟</span><span>桂林山水</span>
+    </div>
+  </div>
+
+</body>
+</html>
